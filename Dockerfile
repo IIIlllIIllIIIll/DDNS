@@ -7,4 +7,5 @@ FROM alpine:latest
 LABEL maintainer="NN708"
 COPY --from=0 /app/entrypoint.sh /
 COPY --from=0 /app/dist/ddns /
+RUN apk --no-cache add curl
 ENTRYPOINT [ "/entrypoint.sh" ]
